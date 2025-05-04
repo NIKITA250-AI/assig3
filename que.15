@@ -1,0 +1,99 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Complex Navigation Bar</title>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+
+  <nav class="navbar">
+    <section class="nav-section section-1">
+      <a href="https://external.com">External Link 1</a>
+      <a href="#internal1">Internal Link 1</a>
+      <div>
+        <a href="#nested1">Nested Link 1</a>
+      </div>
+    </section>
+    
+    <section class="nav-section section-2">
+      <a href="https://another.com">External Link 2</a>
+      <a href="#internal2">Internal Link 2</a>
+      <div>
+        <a href="#nested2">Nested Link 2</a>
+      </div>
+    </section>
+
+    <section class="nav-section section-3">
+      <a href="#internal3">Internal Link 3</a>
+      <a href="https://third.com">External Link 3</a>
+      <div>
+        <a href="#nested3">Nested Link 3</a>
+      </div>
+    </section>
+  </nav>
+
+</body>
+</html>
+✅ CSS (styles.css)
+css
+Copy
+Edit
+/* Reset */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* Navbar container */
+.navbar {
+  display: flex;
+  justify-content: space-around;
+  background-color: #f2f2f2;
+  padding: 20px;
+  flex-wrap: wrap;
+}
+
+.nav-section {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+/* Descendant combinators: each section's links get distinct colors */
+.section-1 a {
+  color: darkblue;
+}
+
+.section-2 a {
+  color: darkgreen;
+}
+
+.section-3 a {
+  color: darkred;
+}
+
+/* Child combinator: style direct children only */
+.nav-section > a {
+  font-weight: bold;
+  text-decoration: underline;
+}
+
+/* Pseudo-classes for interactivity */
+a:hover {
+  color: orange;
+  text-decoration: none;
+}
+
+a:active {
+  color: crimson;
+}
+
+/* Attribute selector with high specificity override */
+.navbar a[href^="https"] {
+  color: purple !important; /* Overrides any other link color */
+  font-style: italic;
+}
