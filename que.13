@@ -1,0 +1,42 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Interactive List with Combinators</title>
+  <style>
+    /* Bold first list item */
+    ol li:first-child {
+      font-weight: bold;
+    }
+
+    /* Adjacent sibling: 2nd item gets background because it follows 1st */
+    ol li:first-child + li {
+      background-color: #d0f0ff;
+    }
+
+    /* General sibling: all items after the 3rd become italic */
+    ol li:nth-child(3) ~ li {
+      font-style: italic;
+    }
+
+    /* Hover effect on all list items */
+    ol li:hover {
+      color: darkorange;
+      cursor: pointer;
+    }
+  </style>
+</head>
+<body>
+
+  <h2>My Interactive List</h2>
+  <ol>
+    <li>Item One</li>
+    <li>Item Two</li>
+    <li>Item Three</li>
+    <li>Item Four</li>
+    <li>Item Five</li>
+  </ol>
+
+</body>
+</html>
