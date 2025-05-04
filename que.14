@@ -1,0 +1,71 @@
+
+!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Fix Layout</title>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <h1>Debugging Task</h1>
+  <div class="container">
+    <div class="box">Box 1</div>
+    <div class="box">Box 2</div>
+    <div class="box">Box 3</div>
+  </div>
+  <p class="text">Fix my position!</p>
+</body>
+</html>
+styles.css
+css
+Copy
+Edit
+/* Reset and layout corrections */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: sans-serif;
+  padding: 20px;
+}
+
+h1 {
+  margin-bottom: 20px;
+}
+
+/* Flexbox layout for container */
+.container {
+  display: flex;
+  gap: 20px;
+  flex-wrap: wrap;
+  margin-bottom: 20px;
+}
+
+/* Styling individual boxes */
+.box {
+  flex: 1 1 100px;
+  min-width: 100px;
+  height: 100px;
+  background: lightblue;
+  border: 1px solid black;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* Fixed text style correction */
+.text {
+  position: relative;
+  left: 0;
+  top: 0;
+  text-align: center;
+  padding: 10px;
+  background-color: #eee;
+  border: 1px solid #ccc;
+}
+</body>
+</html>
